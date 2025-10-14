@@ -16,5 +16,8 @@
     "url": "https://github.com/Ebo1996/Restraunt-food-app-nodejs-project/issues"
   },
   "homepage": "https://github.com/Ebo1996/Restraunt-food-app-nodejs-project#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
 }
