@@ -18,6 +18,8 @@
   "homepage": "https://github.com/Ebo1996/Restraunt-food-app-nodejs-project#readme",
   "description": "",
   "dependencies": {
-    "express": "^5.1.0"
+    "colors": "^1.4.0",
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10"
   }
 }
