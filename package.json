@@ -19,6 +19,7 @@
   "homepage": "https://github.com/Ebo1996/Restraunt-food-app-nodejs-project#readme",
   "description": "",
   "dependencies": {
+    "chalk": "^5.6.2",
     "colors": "^1.4.0",
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",

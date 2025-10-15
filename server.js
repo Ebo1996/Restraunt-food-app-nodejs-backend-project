@@ -1,4 +1,5 @@
 const express = require('express');
+const chalk = require('chalk'); // ✅ import chalk
 const app = express();
 
 app.get('/', (req, res) => {
@@ -8,5 +9,5 @@ app.get('/', (req, res) => {
 const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, () => {
-  console.log(`✅ Server running on port ${PORT}`);
+  console.log(chalk.white.bgMagenta(`✅ Server running on port ${PORT}`));
 });
