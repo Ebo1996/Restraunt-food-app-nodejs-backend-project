@@ -1,7 +1,21 @@
 const express = require('express');
-const chalk = require('chalk'); // ✅ import chalk
+const colors = require('colors');
+const morgan = require('morgan');
+const dotenv = require('dotenv');
+const cors = require('cors');
+const chalk = require('chalk');
+
+// Load env variables
+dotenv.config();
+
+// Initialize express app
 const app = express();
 
+// Middlewares
+app.use(cors());
+app.use(morgan('dev'));
+
+// Test route
 app.get('/', (req, res) => {
   res.status(200).send('<h1>Welcome to the server</h1>');
 });
