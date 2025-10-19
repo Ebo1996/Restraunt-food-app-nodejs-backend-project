@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const colors = require("colors");
 
-// Function MongoDB database connection
+
 const connectDb = async () => {
   try {
     await mongoose.connect(process.env.MONGO_URL);
@@ -14,4 +14,4 @@ const connectDb = async () => {
   }
 };
 
-module.exports = connectDb;
+module.exports = { connectDb };
