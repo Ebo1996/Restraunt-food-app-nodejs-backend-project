@@ -1,19 +1,23 @@
-const express = require('express');
-const colors = require('colors');
-const morgan = require('morgan');
-const dotenv = require('dotenv');
-const cors = require('cors');
-const chalk = require('chalk');
+const express = require("express");
+const colors = require("colors");
+const cors = require("cors");
+const morgan = require("morgan");
+const dotenv = require("dotenv");
+const { connectDB } = require("./config/db");
 
-// Load env variables
+//dot en configuration
 dotenv.config();
 
-// Initialize express app
+//DB connection
+connectDB();
+
+//rest object
 const app = express();
 
-// Middlewares
+//middlewares
 app.use(cors());
-app.use(morgan('dev'));
+app.use(express.json());
+app.use(morgan("dev"));
 
 // Test route
 app.get('/', (req, res) => {
