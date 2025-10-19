@@ -1,15 +1,15 @@
 const express = require("express");
-const colors = require("colors");
+const colors = require("colors"); // Using colors instead of chalk
 const cors = require("cors");
 const morgan = require("morgan");
 const dotenv = require("dotenv");
-const { connectDB } = require("./config/db");
+const connectDb = require("./config/db"); // Fixed import - no destructuring
 
 //dot en configuration
 dotenv.config();
 
 //DB connection
-connectDB();
+connectDb(); // Fixed function call
 
 //rest object
 const app = express();
@@ -27,5 +27,5 @@ app.get('/', (req, res) => {
 const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, () => {
-  console.log(chalk.white.bgMagenta(`✅ Server running on port ${PORT}`));
+  console.log(colors.white.bgMagenta(`✅ Server running on port ${PORT}`)); // Using colors instead of chalk
 });
