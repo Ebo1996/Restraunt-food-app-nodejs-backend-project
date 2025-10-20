@@ -10,6 +10,6 @@ const registerController = async (req, res) => {
       error
     });
   }
-};
+}; 
 
 module.exports = { registerController };
