@@ -1,6 +1,3 @@
-const mongoose = require('mongoose')
-
-// Schema
 const userSchema = new mongoose.Schema({
   userName: {
     type: String,
@@ -21,11 +18,17 @@ const userSchema = new mongoose.Schema({
   phone: {
     type: String,
     required: [true, 'phone number is required']
+  },
+  userType: {
+    type: String,
+    required: [true, 'user type is required'],
+    default: 'client',
+    enum: ['client', 'admin', 'vendor', 'driver']
+  },
+  profile: {
+    type: String,
+    default: ''
   }
 }, {
-  timestamps: true // Optional: adds createdAt and updatedAt fields
+  timestamps: true
 })
-
-// Create and export the model
-const User = mongoose.model('User', userSchema)
-module.exports = User
