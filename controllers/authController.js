@@ -30,7 +30,6 @@ const registerController = async (req, res) => {
     });
 
     // Add user creation logic here
-
   } catch (error) {
     console.log(error);
     res.status(500).send({
