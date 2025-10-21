@@ -30,7 +30,6 @@ const registerController = async (req, res) => {
     });
 
     // Add user creation logic here
-    // const newUser = await userModel.create
 
   } catch (error) {
     console.log(error);
