@@ -13,6 +13,9 @@ const registerController = async (req, res) => {
       });
     }
 
+
+
+
     // check user
     const existing = await userModel.findOne({ email });
     if (existing) {
