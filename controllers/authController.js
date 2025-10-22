@@ -1,12 +1,13 @@
+// authController.js - Fix the export
 const userModel = require("../models/userModel");
 
 // REGISTER
 const registerController = async (req, res) => {
   try {
-    const { username, email, password, phone, address } = req.body;
+    const { userName, email, password, phone, address } = req.body;
 
     // validation
-    if (!username || !email || !password || !address || !phone) {
+    if (!userName || !email || !password || !address || !phone) {
       return res.status(500).send({
         success: false,
         message: 'Please Provide All Fields'
@@ -23,13 +24,12 @@ const registerController = async (req, res) => {
     }
 
     //create new user
-    const user = await userModel.create({ username, email, password, address, phone })
+    const user = await userModel.create({ userName, email, password, address, phone })
     res.status(201).send({
       success: true,
       message: 'succesfully Registered'
     });
 
-    // Add user creation logic here
   } catch (error) {
     console.log(error);
     res.status(500).send({
@@ -40,4 +40,5 @@ const registerController = async (req, res) => {
   }
 };
 
-module.exports = registerController;
+// Export as an object
+module.exports = { registerController };
