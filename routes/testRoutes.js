@@ -1,8 +1,10 @@
+// testRoutes.js - Use the controller properly
 const express = require('express');
+const { testUserController } = require('../controllers/testController');
 
-//router
 const router = express.Router();
 
-module.exports = router;
 // router GET | POST | PUT | DELETE |UPDATE
-router.get('/test-user',)
+router.get('/test-user', testUserController);
+
+module.exports = router;
