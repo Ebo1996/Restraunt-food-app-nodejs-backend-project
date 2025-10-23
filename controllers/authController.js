@@ -1,4 +1,4 @@
-// authController.js - Fix the export
+// authController.js
 const userModel = require("../models/userModel");
 
 // REGISTER
@@ -8,37 +8,51 @@ const registerController = async (req, res) => {
 
     // validation
     if (!userName || !email || !password || !address || !phone) {
-      return res.status(500).send({
+      return res.status(400).send({
         success: false,
-        message: 'Please Provide All Fields'
+        message: "Please provide all fields",
       });
     }
 
     // check user
     const existing = await userModel.findOne({ email });
     if (existing) {
-      return res.status(500).send({
+      return res.status(400).send({
         success: false,
-        message: 'Email Already Registered please Login'
+        message: "Email already registered, please login",
       });
     }
 
-    //create new user
-    const user = await userModel.create({ userName, email, password, address, phone })
+    // create new user
+    await userModel.create({ userName, email, password, address, phone });
     res.status(201).send({
       success: true,
-      message: 'succesfully Registered'
+      message: "Successfully registered",
     });
-
   } catch (error) {
-    console.log(error);
+    console.error(error);
     res.status(500).send({
       success: false,
-      message: 'Error In Register API',
-      error
+      message: "Error in Register API",
+      error,
     });
   }
 };
 
-// Export as an object
-module.exports = { registerController };
+// LOGIN
+const loginController = async (req, res) => {
+  try {
+    // TODO: Implement login logic
+    res.send("Login logic not yet implemented");
+  } catch (error) {
+    console.error(error);
+    res.status(500).send({
+      success: false,
+      message: "Error in Login API",
+      error,
+    });
+  }
+};
+
+// ✅ Export both
+module.exports = { registerController, loginController };
