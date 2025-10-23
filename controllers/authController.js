@@ -43,6 +43,21 @@ const registerController = async (req, res) => {
 const loginController = async (req, res) => {
   try {
     const { email, password } = req.body;
+
+    if (!email || !password) {
+      return res.status(400).send({
+        success: false,
+        message: "Please provide email or password",
+      })
+    }
+    // check user
+    const user = await userModel.findOne({ email });
+    if (!user) {
+      return res.status(404).send({
+        success: false,
+        message: "User not found",
+      });
+    }
   } catch (error) {
     console.error(error);
     res.status(500).send({
