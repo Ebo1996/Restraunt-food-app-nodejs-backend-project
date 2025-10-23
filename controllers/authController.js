@@ -58,6 +58,11 @@ const loginController = async (req, res) => {
         message: "User not found",
       });
     }
+    res.status(200).send({
+      success: true,
+      message: 'Login Successfully',
+      user,
+    });
   } catch (error) {
     console.error(error);
     res.status(500).send({
