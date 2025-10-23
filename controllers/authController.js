@@ -55,7 +55,7 @@ const loginController = async (req, res) => {
     if (!user) {
       return res.status(404).send({
         success: false,
-        message: "User not found",
+        message: "failed or password mismatch",
       });
     }
     res.status(200).send({
