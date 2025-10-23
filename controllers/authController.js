@@ -42,8 +42,7 @@ const registerController = async (req, res) => {
 // LOGIN
 const loginController = async (req, res) => {
   try {
-    // TODO: Implement login logic
-    res.send("Login logic not yet implemented");
+    const { email, password } = req.body;
   } catch (error) {
     console.error(error);
     res.status(500).send({
@@ -54,5 +53,5 @@ const loginController = async (req, res) => {
   }
 };
 
-// ✅ Export both
+//  Export both
 module.exports = { registerController, loginController };
