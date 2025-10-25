@@ -1,5 +1,6 @@
 // authController.js
 const userModel = require("../models/userModel");
+const bcrypt = require('bcrypt');
 
 // REGISTER
 const registerController = async (req, res) => {
