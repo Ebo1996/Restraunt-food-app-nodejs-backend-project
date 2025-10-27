@@ -17,15 +17,17 @@
     "url": "https://github.com/Ebo1996/Restraunt-food-app-nodejs-project/issues"
   },
   "homepage": "https://github.com/Ebo1996/Restraunt-food-app-nodejs-project#readme",
-  "description": "",
+  "description": "A complete Node.js backend API for restaurant food delivery application",
   "dependencies": {
-    "bcrypt": "^6.0.0",
     "bcryptjs": "^3.0.2",
-    "chalk": "^4.1.2",
     "colors": "^1.4.0",
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^5.1.0",
+    "express-rate-limit": "^7.1.5",
+    "express-validator": "^7.0.1",
+    "helmet": "^7.1.0",
+    "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.19.1",
     "morgan": "^1.10.1",
     "nodemon": "^3.1.10"

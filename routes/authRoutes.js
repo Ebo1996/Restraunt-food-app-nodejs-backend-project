@@ -1,16 +1,11 @@
-// authRoutes.js - Fix the import statement
-const express = require('express')
-const router = express.Router()
-// const { registerController } = require('../controllers/authController')
+const express = require('express');
+const { registerController, loginController } = require('../controllers/authController');
+const { registerValidation, loginValidation } = require('../middleware/validationMiddleware');
+const { authLimiter } = require('../middleware/securityMiddleware');
 
-// REGISTER || POST
-// NOTE: Temporarily removed the register route because the controller import
-// was causing a "argument handler must be a function" error at startup.
-// Re-enable after fixing `controllers/authController.js` export shape.
-// router.post('/register', registerController)
+const router = express.Router();
 
-// LOGIN || POST
-// Temporarily commented out until the corresponding controller is implemented/imported.
-// router.post('/login', loginController);
+router.post('/register', registerValidation, registerController);
+router.post('/login', authLimiter, loginValidation, loginController);
 
-module.exports = router
+module.exports = router;
