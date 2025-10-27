@@ -23,6 +23,9 @@ const registerController = async (req, res) => {
         message: "Email already registered, please login",
       });
     }
+    // hashing password
+    var salt = bcrypt.genSaltSync(10);
+    const hashedPassword = await bcrypt.hash()
 
     // create new user
     await userModel.create({ userName, email, password, address, phone });
