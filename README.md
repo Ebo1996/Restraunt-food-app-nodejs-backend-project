@@ -171,11 +171,7 @@ Restraunt-food-app-nodejs-project/
 └── package.json           # Dependencies
 ```
 
-## License
-
-ISC
-
 ## Author
 
-Restaurant Food App Development Team
+Restaurant EBISA BERHANU
 
