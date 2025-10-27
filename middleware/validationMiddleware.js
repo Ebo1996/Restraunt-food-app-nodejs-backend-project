@@ -12,6 +12,7 @@ const handleValidationErrors = (req, res, next) => {
   next();
 };
 
+
 const registerValidation = [
   body('userName')
     .trim()
