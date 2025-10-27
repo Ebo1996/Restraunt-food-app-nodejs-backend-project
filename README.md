@@ -17,6 +17,7 @@ A complete Node.js backend API for a restaurant food delivery application built 
 - ✅ Password security (select: false by default)
 - ✅ Error handling middleware
 
+
 ## Tech Stack
 
 - **Runtime**: Node.js
