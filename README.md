@@ -2,7 +2,7 @@
 
 A complete Node.js backend API for a restaurant food delivery application built with Express, MongoDB, and JWT authentication.
 
-## Features
+## Features 
 
 - ✅ User Authentication (Register/Login with JWT)
 - ✅ Food Management (CRUD operations)
